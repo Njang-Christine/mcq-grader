@@ -1,0 +1,37 @@
+:root{
+  --bg:#0f1724; /* deep navy */
+  --card:#0b1220; /* darker card */
+  --accent:#ff7a59; /* coral */
+  --accent-2:#6dd3b2; /* mint */
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box;font-family:Inter,Segoe UI,system-ui,Arial}
+body{margin:0;background:linear-gradient(180deg,var(--bg),#07121a);color:#e6eef6;min-height:100vh}
+.hero{padding:28px 20px;text-align:center;background:linear-gradient(90deg,rgba(255,122,89,0.08),rgba(109,211,178,0.06));border-bottom:1px solid rgba(255,255,255,0.03)}
+.hero h1{margin:0;font-size:28px;color:var(--accent)}
+.container{max-width:900px;margin:28px auto;padding:0 16px}
+.card{background:var(--card);padding:18px;border-radius:10px;margin-bottom:16px;box-shadow:0 4px 18px rgba(2,6,23,0.6)}
+.muted{color:var(--muted);font-size:13px;margin-top:6px}
+.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#07121a;padding:10px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+.button{display:inline-block;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.04);color:var(--accent);text-decoration:none;margin-left:8px}
+.hidden{display:none}
+.results table{width:100%;border-collapse:collapse;margin-top:8px}
+.results th, .results td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left}
+.results th{color:var(--accent-2)}
+.footer{padding:14px 16px;text-align:center;color:var(--muted);font-size:14px}
+@media(min-width:760px){.card{padding:24px}}
+input[type=file]{background:var(--glass);padding:10px;border-radius:8px;color:var(--muted)}
+label{display:block;margin:8px 0}
+#summary{margin-bottom:8px}
+
+/* Wizard / steps */
+.wizard{display:block}
+.steps-indicator{list-style:none;padding:0;margin:0 0 12px 0;display:flex;gap:8px}
+.steps-indicator .step-ind{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+.steps-indicator .step-ind.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07121a}
+.steps{min-height:120px}
+.step{display:block}
+.step:not(.active){display:none}
+.controls{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+.controls .button, .controls .primary{min-width:110px}

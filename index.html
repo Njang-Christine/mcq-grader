@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Automated MCQ Grader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Automated MCQ Grader</h1>
+    <p>Upload an answer key and student submissions to grade instantly.</p>
+  </header>
+
+  <main class="container">
+    <div class="wizard">
+      <ol class="steps-indicator" aria-hidden="false">
+        <li class="step-ind active">1</li>
+        <li class="step-ind">2</li>
+        <li class="step-ind">3</li>
+        <li class="step-ind">4</li>
+      </ol>
+
+      <div class="steps">
+        <section class="card step active" data-step="1">
+          <h2>Step 1 — Upload Answer Key</h2>
+          <input id="keyFile" type="file" accept=".csv,.json">
+          <p class="muted">CSV format: question,answer (e.g. 1,A)</p>
+        </section>
+
+        <section class="card step" data-step="2">
+          <h2>Step 2 — Upload Submissions</h2>
+          <input id="subsFile" type="file" accept=".csv">
+          <p class="muted">CSV format: student_id,Q1,Q2,... (header optional)</p>
+        </section>
+
+        <section class="card step" data-step="3">
+          <h2>Step 3 — Options & Grade</h2>
+          <label><input id="partialCredit" type="checkbox"> Allow partial credit (for multi-answer)</label>
+          <div style="margin-top:12px">
+            <button id="gradeBtn" class="primary">Grade Submissions</button>
+            <a id="downloadReport" class="button hidden">Download Report (CSV)</a>
+          </div>
+        </section>
+
+        <section class="card step results" id="results" data-step="4">
+          <h2>Step 4 — Results</h2>
+          <div id="summary"></div>
+          <table id="reportTable"></table>
+        </section>
+
+        <section class="card step" data-step="5">
+          <h2>Sample Files</h2>
+          <p>Try the sample files in the project folder.</p>
+        </section>
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn" class="button hidden">Previous</button>
+        <button id="nextBtn" class="primary">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Built with a vibrant palette. Export reports and review correct answers below.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
